@@ -4,7 +4,7 @@ import zlib
 from splunklib.searchcommands import dispatch, StreamingCommand, Configuration
 
 @Configuration()
-class BzconvCommand(StreamingCommand):
+class SampleCommand(StreamingCommand):
     def stream(self, records):
         for record in records:
             each_payload = record['payload']
@@ -13,4 +13,4 @@ class BzconvCommand(StreamingCommand):
             yield record
 
 if __name__ == "__main__":
-    dispatch(BzconvCommand, sys.argv, sys.stdin, sys.stdout, __name__)
+    dispatch(SampleCommand, sys.argv, sys.stdin, sys.stdout, __name__)
