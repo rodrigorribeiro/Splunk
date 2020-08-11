@@ -1,5 +1,5 @@
 # commands - Sample App
-> This app should be used as a sample to create new apps with the purpose of extending SPL with custom commands.
+> This app should be used as a sample to create new apps with the purpose of extending SPL with custom commands using v1 protocol or v2 protocol.
 
 This code in python can receive Splunk stdin do something into python code and return stdout to Splunk.
 
