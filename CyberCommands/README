@@ -1,0 +1,29 @@
+# CyberCommand
+
+CyberCommand is a pack of useful commands in Python to the Splunk search language.
+
+## Usage
+
+There is a list of commands:
+- base16 encode (ccb16enc) and decoder (ccb16dec)
+- base32 encode (ccb32enc) and decoder (ccb32dec)
+- base64 encode (ccb64enc) and decoder (ccb64dec)
+- base85 encode (ccb85enc) and decoder (ccb85dec)
+- HEX encode (cchexenc) and decoder (cchexdec)
+
+Examples:
+
+| makeresults 
+| eval field_base16 = "CyberCommands" 
+| ccb64enc field=field_base16 
+| ccb64dec field=field_base16_enc 
+| table field_base16 field_base16_enc field_base16_dec
+
+The first step produces a field with string content "CyberCommands";
+The second step using the command to encode ccb64enc specifying the field "field_base16";
+The third step using the command to decode ccb64dec specifying the field "field_base16_enc" produced in the last command;
+The last command shows 3 fields each one with the correct property
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Please make sure to update tests as appropriate.
